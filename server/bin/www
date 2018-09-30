@@ -29,6 +29,14 @@ server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
 
+var io = require('socket.io').listen(server);
+
+//接続確立時の処理
+io.sockets.on('connection', function (socket) {
+  // この中でデータのやり取りを行う
+  console.log('connected');
+});
+
 /**
  * Normalize a port into a number, string, or false.
  */

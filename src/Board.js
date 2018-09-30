@@ -2,18 +2,18 @@ import React, { Component } from 'react';
 import Square from './Square';
 
 class Board extends Component {
-  renderSquare(i) {
-    return <Square key={i} value={this.props.squares[i]} onClick={() => this.props.onClick(i)} />;
+  renderSquare(value, i) {
+    return <Square key={i} value={value}/>;
   }
 
-
   createBorad(){
-    let board = [];
-    for(let i=0;i<5;i++){
+    const prop_board = this.props.board;
+    const board = [];
+    for(let i=0;i<prop_board.length;i++){
       board.push(
         <div className="board-row" key={"board"+i}>{
-        [0,1,2,3,4].map(j=>{
-          return this.renderSquare(i*5 + j);
+          prop_board[i].map((value, j)=>{
+            return this.renderSquare(value, i*5 + j);
         })}
       </div>);
     }
