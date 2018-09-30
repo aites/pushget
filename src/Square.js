@@ -7,6 +7,8 @@ function Square(props) {
       return <button className="square">{Piece('cat')}</button>
     case 2:
       return <button className="square">{Piece('dog')}</button>
+    case 3:
+      return <button className="square">{Piece('hole')}</button>
     default:
       return <button className="square">{Piece('')}</button>
     break;

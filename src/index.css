@@ -8,6 +8,10 @@ ol, ul {
   padding-left: 30px;
 }
 
+img {
+  border-style:none;
+}
+
 /*  */
 .root{
   margin: 0 auto;
@@ -75,6 +79,10 @@ ol, ul {
   max-width: 80px;
   max-height: 80px;
   background-size: contain;
+  border-style:none;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0 auto;
 }
 
 .char-piece__dog{
@@ -83,4 +91,8 @@ ol, ul {
 
 .char-piece__cat{
   background-image: url("./img/cat.png");
+}
+
+.char-piece__hole{
+  background-image: url("./img/hole.png");
 }
