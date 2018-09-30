@@ -1,9 +1,10 @@
 import React from 'react';
+import Piece from './Piece';
 
 function Square(props) {
   return (
     <button className="square" onClick={() => props.onClick()}>
-      {props.value}
+      {Piece('dog')}
     </button>
   );
 }

@@ -11,7 +11,7 @@ class Board extends Component {
     let board = [];
     for(let i=0;i<5;i++){
       board.push(
-        <div className="board-row" key={"b"+i}>{
+        <div className="board-row" key={"board"+i}>{
         [0,1,2,3,4].map(j=>{
           return this.renderSquare(i*5 + j);
         })}

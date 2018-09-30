@@ -67,3 +67,20 @@ ol, ul {
 .game-board{
   height: 80%;
 }
+
+/* コマ */
+.char-piece {
+  width: 8vw;
+  height: 8vw;
+  max-width: 80px;
+  max-height: 80px;
+  background-size: contain;
+}
+
+.char-piece__dog{
+  background-image: url("./img/dog.png");
+}
+
+.char-piece__cat{
+  background-image: url("./img/cat.png");
+}
