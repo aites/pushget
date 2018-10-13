@@ -72,6 +72,7 @@ class Game extends Component {
         <div className="game-board">
           <Board
             board={board}
+            socket={this.socket}
           />
         </div>
       </div>
