@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import Square from './Square';
 
 class Board extends Component {
-  renderSquare(value, i) {
-    return <Square key={i} value={value}/>;
+  renderSquare(value, i, boardData) {
+    return <Square key={i} value={value} data={boardData}/>;
   }
 
   createBorad(){
@@ -13,7 +13,7 @@ class Board extends Component {
       board.push(
         <div className="board-row" key={"board"+i}>{
           prop_board[i].map((value, j)=>{
-            return this.renderSquare(value, i*5 + j);
+            return this.renderSquare(value, i*5 + j, [i,j]);
         })}
       </div>);
     }
