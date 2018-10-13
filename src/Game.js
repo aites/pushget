@@ -19,6 +19,8 @@ class Game extends Component {
 
   render() {
     const board = this.state.board;
+    console.log(board);
+
     return (
       <div className="game">
         <div className="game-board">
