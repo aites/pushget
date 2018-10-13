@@ -6,11 +6,14 @@ import io from "socket.io-client";
 import UUID from "node-uuid";
 import Cookies from 'js-cookie';
 
+import * as local_config from './config/config.local.json';
+
 class Game extends Component {
   constructor(props) {
     super();
     const userUUID = this.userUUID = Cookies.get("userUUID")?Cookies.get("userUUID"):UUID.v4();
-    const socket = this.socket = io('192.168.1.2:3001/game');
+    const socket = io(local_config.localIpAddress + `:3001/game`);
+
     socket.on('connect', ()=>{
       socket.emit('joinGame', {gameUUId, userUUID});
     });

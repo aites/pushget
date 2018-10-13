@@ -5,13 +5,15 @@ import io from "socket.io-client";
 import UUID from "node-uuid";
 import Cookies from 'js-cookie';
 
+import * as local_config from './config/config.local.json';
+
 class Room extends Component {
   constructor() {
     super();
     const userUUID = Cookies.get("userUUID")?Cookies.get("userUUID"):UUID.v4();
     Cookies.set("userUUID", userUUID);
 
-    const socket = io('192.168.1.2:3001/room');
+    const socket = io(local_config.localIpAddress + `:3001/room`);
 
     socket.on('connect', ()=>{
       socket.emit('setUser', {userUUID});
