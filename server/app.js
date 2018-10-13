@@ -19,6 +19,22 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// session
+var session = require('express-session');
+var sessionMiddleware = session({
+  secret: 'pushget',
+  resave: true,
+  saveUninitialized: false,
+  cookie:{
+    httpOnly: false,
+    secure: false,
+    maxage: 1000 * 60 * 30 * 60,
+  }
+});
+app.session = sessionMiddleware;
+app.use(sessionMiddleware);
+
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
